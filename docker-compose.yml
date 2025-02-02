@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
 
   pgadmin:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:6.21
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@email.com
       PGADMIN_DEFAULT_PASSWORD: 123456
@@ -47,7 +47,7 @@ services:
       - monitoring_network
 
   zabbix-server:
-    image: zabbix/zabbix-server-pgsql:6.4.7
+    image: zabbix/zabbix-server-pgsql:ubuntu-6.0-latest
     environment:
       DB_SERVER_HOST: zabbix-db
       POSTGRES_USER: zabbix
@@ -63,7 +63,7 @@ services:
       - monitoring_network
 
   zabbix-web:
-    image: zabbix/zabbix-web-nginx-pgsql:6.4.7
+    image: zabbix/zabbix-web-nginx-pgsql:ubuntu-6.0-latest
     environment:
       ZBX_SERVER_HOST: zabbix-server
       DB_SERVER_HOST: zabbix-db
@@ -93,7 +93,7 @@ services:
       - monitoring_network
 
   zabbix-agent:
-    image: zabbix/zabbix-agent:6.4.7
+    image: zabbix/zabbix-agent:ubuntu-6.0-latest
     environment:
       ZBX_SERVER_HOST: zabbix-server
       ZBX_HOSTNAME: zabbix-agent
@@ -124,8 +124,6 @@ services:
       - grafana-storage:/var/lib/grafana
     networks:
       - monitoring_network
-  
-  
 
   node-exporter:
     image: prom/node-exporter:v1.6.0
