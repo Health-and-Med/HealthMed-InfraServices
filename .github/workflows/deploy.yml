@@ -1,0 +1,23 @@
+name: Deploy Infraestrutura
+
+on:
+  push:
+    branches:
+      - master  # 🚀 O deploy roda apenas quando há push na master desse repositório
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # 🔹 O agente de infraestrutura executará esse job
+
+    steps:
+      - name: Checkout do Código  # 🔹 Baixa o repositório
+        uses: actions/checkout@v3
+
+      - name: Parar Containers Antigos  # 🔹 Garante que os serviços antigos sejam derrubados
+        run: docker-compose down
+
+      - name: Construir e Subir Infraestrutura  # 🔹 Sobe os novos serviços
+        run: docker-compose up --build -d
+
+      - name: Verificar se os Containers Estão Rodando  # 🔹 Confirma que tudo foi iniciado corretamente
+        run: docker ps
