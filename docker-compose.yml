@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:latest
+    image: postgres:15
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: 123456
@@ -26,7 +26,7 @@ services:
       - monitoring_network
 
   postgres-exporter:
-    image: quay.io/prometheuscommunity/postgres-exporter:latest
+    image: quay.io/prometheuscommunity/postgres-exporter:v0.10.0
     environment:
       DATA_SOURCE_NAME: "postgresql://admin:123456@db:5432/meddb?sslmode=disable"
     ports:
@@ -37,7 +37,7 @@ services:
       - monitoring_network
 
   rabbitmq:
-    image: rabbitmq:3-management
+    image: rabbitmq:3.12-management
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -47,7 +47,7 @@ services:
       - monitoring_network
 
   zabbix-server:
-    image: zabbix/zabbix-server-pgsql:latest
+    image: zabbix/zabbix-server-pgsql:6.4.7
     environment:
       DB_SERVER_HOST: zabbix-db
       POSTGRES_USER: zabbix
@@ -63,7 +63,7 @@ services:
       - monitoring_network
 
   zabbix-web:
-    image: zabbix/zabbix-web-nginx-pgsql:latest
+    image: zabbix/zabbix-web-nginx-pgsql:6.4.7
     environment:
       ZBX_SERVER_HOST: zabbix-server
       DB_SERVER_HOST: zabbix-db
@@ -80,7 +80,7 @@ services:
       - monitoring_network
 
   zabbix-db:
-    image: postgres:latest
+    image: postgres:15
     environment:
       POSTGRES_USER: zabbix
       POSTGRES_PASSWORD: zabbixpass
@@ -93,7 +93,7 @@ services:
       - monitoring_network
 
   zabbix-agent:
-    image: zabbix/zabbix-agent:latest
+    image: zabbix/zabbix-agent:6.4.7
     environment:
       ZBX_SERVER_HOST: zabbix-server
       ZBX_HOSTNAME: zabbix-agent
@@ -105,7 +105,7 @@ services:
       - monitoring_network
 
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:v2.45.0
     ports:
       - "9090:9090"
     command:
@@ -117,7 +117,7 @@ services:
       - monitoring_network
 
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana:9.5.2
     ports:
       - "3000:3000"
     volumes:
@@ -128,7 +128,7 @@ services:
   
 
   node-exporter:
-    image: prom/node-exporter:latest
+    image: prom/node-exporter:v1.6.0
     ports:
       - "9100:9100"
     restart: unless-stopped
