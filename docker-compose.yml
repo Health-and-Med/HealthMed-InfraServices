@@ -124,6 +124,8 @@ services:
       - grafana-storage:/var/lib/grafana
     networks:
       - monitoring_network
+  
+  
 
   node-exporter:
     image: prom/node-exporter:latest
