@@ -10,44 +10,395 @@
 			"name": "scheduling",
 			"item": [
 				{
-					"name": "schedule",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
+					"name": "Schedule",
+					"item": [
+						{
+							"name": "create-list",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenHealthAndMed}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n    \"data\": \"2025-02-10T00:00:00.000Z\",\r\n    \"horaInicio\": \"08:00:00\",\r\n    \"horaFim\": \"09:00:00\",\r\n    \"disponivel\": true,\r\n    \"precoConsulta\": 180\r\n  },\r\n{\r\n    \"data\": \"2025-02-10T00:00:00.000Z\",\r\n    \"horaInicio\": \"10:00:00\",\r\n    \"horaFim\": \"11:00:00\",\r\n    \"disponivel\": true,\r\n    \"precoConsulta\": 180\r\n  }\r\n,\r\n{\r\n    \"data\": \"2025-02-10T00:00:00.000Z\",\r\n    \"horaInicio\": \"13:00:00\",\r\n    \"horaFim\": \"14:00:00\",\r\n    \"disponivel\": true,\r\n    \"precoConsulta\": 180\r\n  }\r\n,\r\n{\r\n    \"data\": \"2025-02-10T00:00:00.000Z\",\r\n    \"horaInicio\": \"15:00:00\",\r\n    \"horaFim\": \"16:00:00\",\r\n    \"disponivel\": true,\r\n    \"precoConsulta\": 180\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/schedule/create-list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"schedule",
+										"create-list"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:5004/api/schedule/create-list' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2ZjY5ZDY5ZS1kYTIyLTQ4ZTEtOTM3Yi03ZmUxYzdmM2JlZTgiLCJuYW1laWQiOiI1Iiwicm9sZSI6ImRvY3RvciIsInVuaXF1ZV9uYW1lIjoiZGV2c0BlbWFpbC5jb20iLCJuYmYiOjE3Mzg4ODYxMTEsImV4cCI6MTczODg4OTcxMSwiaWF0IjoxNzM4ODg2MTExLCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.3nj3_WE9ncr40h1RuCHclkaZ2m1AnWmiFR1-NLOV7aw' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '[\r\n  {\r\n    \"data\": \"2025-02-10T00:27:37.443Z\",\r\n    \"horaInicio\": \"08:00:00\",\r\n    \"horaFim\": \"09:00:00\",\r\n    \"disponivel\": true,\r\n    \"precoConsulta\": 180\r\n  },\r\n{\r\n    \"data\": \"2025-02-10T00:27:37.443Z\",\r\n    \"horaInicio\": \"10:00:00\",\r\n    \"horaFim\": \"11:00:00\",\r\n    \"disponivel\": true,\r\n    \"precoConsulta\": 180\r\n  }\r\n,\r\n{\r\n    \"data\": \"2025-02-10T00:27:37.443Z\",\r\n    \"horaInicio\": \"13:00:00\",\r\n    \"horaFim\": \"14:00:00\",\r\n    \"disponivel\": true,\r\n    \"precoConsulta\": 180\r\n  }\r\n,\r\n{\r\n    \"data\": \"2025-02-10T00:27:37.443Z\",\r\n    \"horaInicio\": \"15:00:00\",\r\n    \"horaFim\": \"16:00:00\",\r\n    \"disponivel\": true,\r\n    \"precoConsulta\": 180\r\n  }\r\n]'"
 							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{tokenHealthAndMed}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"DoctorId\":1,\r\n    \"PatientId\":2,\r\n    \"ScheduledDate\":\"2025-03-01T08:00:00Z\"\r\n}\r\n\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"response": []
 						},
-						"url": {
-							"raw": "http://localhost:8081/api/scheduling/schedule",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"scheduling",
-								"schedule"
-							]
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenHealthAndMed}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"data\": \"2025-02-15T00:35:45.672Z\",\r\n  \"horaInicio\": \"08:00:00\",\r\n  \"horaFim\": \"09:00:00\",\r\n  \"disponivel\": true,\r\n  \"precoConsulta\": 50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/schedule/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"schedule",
+										"create"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:5004/api/schedule/create' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2ZjY5ZDY5ZS1kYTIyLTQ4ZTEtOTM3Yi03ZmUxYzdmM2JlZTgiLCJuYW1laWQiOiI1Iiwicm9sZSI6ImRvY3RvciIsInVuaXF1ZV9uYW1lIjoiZGV2c0BlbWFpbC5jb20iLCJuYmYiOjE3Mzg4ODYxMTEsImV4cCI6MTczODg4OTcxMSwiaWF0IjoxNzM4ODg2MTExLCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.3nj3_WE9ncr40h1RuCHclkaZ2m1AnWmiFR1-NLOV7aw' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"data\": \"2025-02-07T00:35:45.672Z\",\r\n  \"horaInicio\": \"08:00:00\",\r\n  \"horaFim\": \"09:00:00\",\r\n  \"disponivel\": true,\r\n  \"precoConsulta\": 50\r\n}'"
+							},
+							"response": []
 						},
-						"description": "Generated from cURL: curl --location --request GET 'http://localhost:8081/api/auth/ping' \\\r\n--header 'Content-Type: application/json' \\\r\n--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldnNAZW1haWwuY29tIiwianRpIjoiNGIwYzJjOGQtMDE1ZS00ZjcxLTg0MDQtNTRiODhkMjRiN2YyIiwibmJmIjoxNzM4NTAwODMwLCJleHAiOjE3Mzg1MDQ0MzAsImlhdCI6MTczODUwMDgzMCwiaXNzIjoiQXV0aE1lZCIsImF1ZCI6IkhlYWx0aEdhdGV3YXkifQ.Mzgri4KVnu96rkjZQoN84PtDC5Uw9RxH9wy8rne8oNE' \\\r\n--data-raw '{\r\n    \"Email\":\"devs@email.com\",\r\n    \"Password\":\"123456\"\r\n}'"
-					},
-					"response": []
+						{
+							"name": "get-by-doctor-id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenHealthAndMedPatient}}"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/schedule/doctor/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"schedule",
+										"doctor",
+										"2"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:5004/api/schedule/doctor/5' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2ZjY5ZDY5ZS1kYTIyLTQ4ZTEtOTM3Yi03ZmUxYzdmM2JlZTgiLCJuYW1laWQiOiI1Iiwicm9sZSI6ImRvY3RvciIsInVuaXF1ZV9uYW1lIjoiZGV2c0BlbWFpbC5jb20iLCJuYmYiOjE3Mzg4ODYxMTEsImV4cCI6MTczODg4OTcxMSwiaWF0IjoxNzM4ODg2MTExLCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.3nj3_WE9ncr40h1RuCHclkaZ2m1AnWmiFR1-NLOV7aw'"
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenHealthAndMed}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 9,\r\n  \"data\": \"2025-02-10T00:52:41.482Z\",\r\n  \"horaInicio\": \"17:00:00\",\r\n  \"horaFim\": \"18:00:00\",\r\n  \"disponivel\": true,\r\n  \"precoConsulta\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/schedule/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"schedule",
+										"update"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'PUT' \\\r\n  'http://localhost:5004/api/schedule/update' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzNWFmMjc1MS04OWNlLTRjMmQtYjJkOS1hOThmODE5NGJmMWUiLCJuYW1laWQiOiI1Iiwicm9sZSI6ImRvY3RvciIsInVuaXF1ZV9uYW1lIjoiZGV2c0BlbWFpbC5jb20iLCJuYmYiOjE3Mzg4ODkzOTAsImV4cCI6MTczODg5Mjk5MCwiaWF0IjoxNzM4ODg5MzkwLCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.jwnkR1jdi05GcXNEnayKUNjhU6qUvhxp7SCjDyqCTjA' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"id\": 1,\r\n  \"data\": \"2025-02-07T00:52:41.482Z\",\r\n  \"horaInicio\": \"13:00:00\",\r\n  \"horaFim\": \"14:00:00\",\r\n  \"disponivel\": true,\r\n  \"precoConsulta\": 5\r\n}'"
+							},
+							"response": []
+						},
+						{
+							"name": "get-by-schedule-id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenHealthAndMed}}"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/schedule/schedule/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"schedule",
+										"schedule",
+										"9"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:5004/api/schedule/schedule/1' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzNWFmMjc1MS04OWNlLTRjMmQtYjJkOS1hOThmODE5NGJmMWUiLCJuYW1laWQiOiI1Iiwicm9sZSI6ImRvY3RvciIsInVuaXF1ZV9uYW1lIjoiZGV2c0BlbWFpbC5jb20iLCJuYmYiOjE3Mzg4ODkzOTAsImV4cCI6MTczODg5Mjk5MCwiaWF0IjoxNzM4ODg5MzkwLCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.jwnkR1jdi05GcXNEnayKUNjhU6qUvhxp7SCjDyqCTjA'"
+							},
+							"response": []
+						},
+						{
+							"name": "delete-by-id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenHealthAndMed}}"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/schedule/delete/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"schedule",
+										"delete",
+										"5"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'DELETE' \\\r\n  'http://localhost:5004/api/schedule/delete/1' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzNWFmMjc1MS04OWNlLTRjMmQtYjJkOS1hOThmODE5NGJmMWUiLCJuYW1laWQiOiI1Iiwicm9sZSI6ImRvY3RvciIsInVuaXF1ZV9uYW1lIjoiZGV2c0BlbWFpbC5jb20iLCJuYmYiOjE3Mzg4ODkzOTAsImV4cCI6MTczODg5Mjk5MCwiaWF0IjoxNzM4ODg5MzkwLCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.jwnkR1jdi05GcXNEnayKUNjhU6qUvhxp7SCjDyqCTjA'"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consultation",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenHealthAndMedPatient}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"agendaId\": 9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/consultation/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"consultation",
+										"create"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:5004/api/consultation/create' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzYTc5NmUzMy0xMTQ0LTRmMzgtYjA2ZC1mNTlmZjY1MGY1ODQiLCJuYW1laWQiOiI0Iiwicm9sZSI6InBhdGllbnQiLCJ1bmlxdWVfbmFtZSI6ImRhaWFuZUBlbWFpbC5jb20iLCJuYmYiOjE3MzkwMjIyMDcsImV4cCI6MTczOTAyNTgwNywiaWF0IjoxNzM5MDIyMjA3LCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.VnZ9C3I1BQF20JmXrvyoLSpExNtsdCqSJ3x-Frpf6qE' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"agendaId\": 1\r\n}'"
+							},
+							"response": []
+						},
+						{
+							"name": "get-consultations-by-doctor-id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenHealthAndMed}}"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/consultation/doctor/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"consultation",
+										"doctor",
+										"2"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:5004/api/consultation/doctor/2' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzYTc5NmUzMy0xMTQ0LTRmMzgtYjA2ZC1mNTlmZjY1MGY1ODQiLCJuYW1laWQiOiI0Iiwicm9sZSI6InBhdGllbnQiLCJ1bmlxdWVfbmFtZSI6ImRhaWFuZUBlbWFpbC5jb20iLCJuYmYiOjE3MzkwMjIyMDcsImV4cCI6MTczOTAyNTgwNywiaWF0IjoxNzM5MDIyMjA3LCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.VnZ9C3I1BQF20JmXrvyoLSpExNtsdCqSJ3x-Frpf6qE'"
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenHealthAndMed}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\"Vou precisar viajar\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/consultation/delete/8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"consultation",
+										"delete",
+										"8"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'DELETE' \\\r\n  'http://localhost:5004/api/consultation/delete/7' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxOWI5ODgxMi1hZTY4LTQzNjgtYmYwNS1jMmQ3MzYwOWQwNWIiLCJuYW1laWQiOiI0Iiwicm9sZSI6InBhdGllbnQiLCJ1bmlxdWVfbmFtZSI6ImRhaWFuZUBlbWFpbC5jb20iLCJuYmYiOjE3MzkwMjY2NzcsImV4cCI6MTczOTAzMDI3NywiaWF0IjoxNzM5MDI2Njc3LCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.PEikU7g3dII4wEnY8c6z-UHVki8OuPFNEPsh17xKTBE' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '\"Vou precisar viajar\"'"
+							},
+							"response": []
+						},
+						{
+							"name": "approve",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{tokenHealthAndMed}}"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/api/consultation/approve/8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"consultation",
+										"approve",
+										"8"
+									]
+								},
+								"description": "Generated from cURL: curl -X 'PUT' \\\r\n  'http://localhost:5004/api/consultation/approve/6' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhMDk2MzAxNS0wYWJhLTQzZDYtYmM1YS1kMmE3MGNkYjVmMzMiLCJuYW1laWQiOiIyIiwicm9sZSI6ImRvY3RvciIsInVuaXF1ZV9uYW1lIjoiUmVuYXRvLmxpbWFAZW1haWwuY29tIiwibmJmIjoxNzM5MDMwMDQwLCJleHAiOjE3MzkwMzM2NDAsImlhdCI6MTczOTAzMDA0MCwiaXNzIjoiQXV0aE1lZCIsImF1ZCI6IkhlYWx0aEdhdGV3YXkifQ.fLaci6leckZQcmXiLk8BJ-D-J3SlGPKlvwnDTMiwJ1U'"
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -74,7 +425,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": 1,\r\n  \"nome\": \"Firmina\",\r\n  \"especialidadeId\": 3,\r\n  \"email\": \"firmina@email.com\",\r\n  \"precoConsulta\": 80.75,\r\n  \"usuario\": {\r\n    \"senhaHash\": \"123456\"\r\n  }\r\n}",
+							"raw": "{\r\n  \"nome\": \"Marcos\",\r\n  \"especialidadeId\": 3,\r\n  \"email\": \"marcos@email.com\",\r\n  \"precoConsulta\": 100.75,\r\n  \"usuario\": {\r\n    \"senhaHash\": \"123456\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -157,7 +508,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8081/api/med/getBySpecialty?specialtyId=1",
+							"raw": "http://localhost:8081/api/med/getBySpecialty?specialtyId=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -171,8 +522,39 @@
 							"query": [
 								{
 									"key": "specialtyId",
-									"value": "1"
+									"value": "3"
 								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:5001/api/med/getBySpecialty?especialidadeId=1' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzQ1Ni03OC9TUCIsImp0aSI6IjU4OTVjNjY2LWRmY2QtNGJkMi1iOTlhLTdlYzVhMmQ0ZmMxYyIsIm5iZiI6MTczODc5NTAxNiwiZXhwIjoxNzM4Nzk4NjE2LCJpYXQiOjE3Mzg3OTUwMTYsImlzcyI6IkF1dGhNZWQiLCJhdWQiOiJIZWFsdGhHYXRld2F5In0.b2x-QP4QPnLyQpDDcwSFjih7fjmc9hj29DE0fLdZpmg'"
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{tokenHealthAndMed}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/med/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"med",
+								"getAll"
 							]
 						},
 						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:5001/api/med/getBySpecialty?especialidadeId=1' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzQ1Ni03OC9TUCIsImp0aSI6IjU4OTVjNjY2LWRmY2QtNGJkMi1iOTlhLTdlYzVhMmQ0ZmMxYyIsIm5iZiI6MTczODc5NTAxNiwiZXhwIjoxNzM4Nzk4NjE2LCJpYXQiOjE3Mzg3OTUwMTYsImlzcyI6IkF1dGhNZWQiLCJhdWQiOiJIZWFsdGhHYXRld2F5In0.b2x-QP4QPnLyQpDDcwSFjih7fjmc9hj29DE0fLdZpmg'"
@@ -202,7 +584,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Crm\":\"123456-78/SP\",\r\n    \"Password\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"Crm\":\"223344-70/BA\",\r\n    \"Password\":\"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -297,6 +679,230 @@
 							]
 						},
 						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:5001/api/med/getAllSpecialties' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzQ1Ni03OC9TUCIsImp0aSI6IjU4OTVjNjY2LWRmY2QtNGJkMi1iOTlhLTdlYzVhMmQ0ZmMxYyIsIm5iZiI6MTczODc5NTAxNiwiZXhwIjoxNzM4Nzk4NjE2LCJpYXQiOjE3Mzg3OTUwMTYsImlzcyI6IkF1dGhNZWQiLCJhdWQiOiJIZWFsdGhHYXRld2F5In0.b2x-QP4QPnLyQpDDcwSFjih7fjmc9hj29DE0fLdZpmg'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let responseData = pm.response.json();\r",
+									"if (responseData.token) {\r",
+									"    pm.globals.set(\"tokenHealthAndMedPatient\", responseData.token);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"daiane@email.com\",\r\n  \"password\": \"24422244\",\r\n  \"cpf\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/patients/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"patients",
+								"login"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:5001/api/patients/login' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"email\": \"devs@email.com\",\r\n  \"password\": \"123456\"\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ZDFlMWRlYy0wYmZkLTRhYWEtYmMzZC0zOTk2YmI2YjgxMzMiLCJuYW1laWQiOiIzIiwicm9sZSI6InBhdGllbnQiLCJ1bmlxdWVfbmFtZSI6ImRldnNAZW1haWwuY29tIiwibmJmIjoxNzM4OTYzODQ3LCJleHAiOjE3Mzg5Njc0NDcsImlhdCI6MTczODk2Mzg0NywiaXNzIjoiQXV0aE1lZCIsImF1ZCI6IkhlYWx0aEdhdGV3YXkifQ.bxvWMyXWqvYCRBoeWR759SCsjhSG4Ag4ZPkMO8c2xHA"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"daiane Maria\",\r\n  \"cpf\": \"04865363513\",\r\n  \"email\": \"daiane2@email.com\",\r\n  \"dataNascimento\": \"1990-11-24\",\r\n  \"usuario\": {\r\n    \"senhaHash\": \"123456\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/patients/create?=Bearer {{tokenHealthAndMedPatient}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"patients",
+								"create"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "Bearer {{tokenHealthAndMedPatient}}"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:5001/api/patients/create' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3ZDFlMWRlYy0wYmZkLTRhYWEtYmMzZC0zOTk2YmI2YjgxMzMiLCJuYW1laWQiOiIzIiwicm9sZSI6InBhdGllbnQiLCJ1bmlxdWVfbmFtZSI6ImRldnNAZW1haWwuY29tIiwibmJmIjoxNzM4OTYzODQ3LCJleHAiOjE3Mzg5Njc0NDcsImlhdCI6MTczODk2Mzg0NywiaXNzIjoiQXV0aE1lZCIsImF1ZCI6IkhlYWx0aEdhdGV3YXkifQ.bxvWMyXWqvYCRBoeWR759SCsjhSG4Ag4ZPkMO8c2xHA' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"nome\": \"daiane Maria\",\r\n  \"cpf\": \"04865363513\",\r\n  \"email\": \"daiane2@email.com\",\r\n  \"dataNascimento\": \"1990-11-24\",\r\n  \"usuario\": {\r\n    \"senhaHash\": \"123456\"\r\n  }\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhM2Y3ZDM3OC02MzQzLTQwYzktYWZkYi0wYTRkNTFlNjNhMjgiLCJuYW1laWQiOiI0Iiwicm9sZSI6InBhdGllbnQiLCJ1bmlxdWVfbmFtZSI6ImRhaWFuZUBlbWFpbC5jb20iLCJuYmYiOjE3Mzg5Njc2MzAsImV4cCI6MTczODk3MTIzMCwiaWF0IjoxNzM4OTY3NjMwLCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.kJzkkNcrgaNLvFmwtJVxMvkt2ujvTPafxnvwHFfN8h4"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Matheus\",\r\n  \"cpf\": \"04865363513\",\r\n  \"usuario\": {\r\n    \"senhaHash\": \"24422244\"\r\n  },\r\n  \"dataNascimento\": \"1990-11-24\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/patients/update?=Bearer {{tokenHealthAndMedPatient}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"patients",
+								"update"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "Bearer {{tokenHealthAndMedPatient}}"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'PUT' \\\r\n  'http://localhost:5001/api/patients/update' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhM2Y3ZDM3OC02MzQzLTQwYzktYWZkYi0wYTRkNTFlNjNhMjgiLCJuYW1laWQiOiI0Iiwicm9sZSI6InBhdGllbnQiLCJ1bmlxdWVfbmFtZSI6ImRhaWFuZUBlbWFpbC5jb20iLCJuYmYiOjE3Mzg5Njc2MzAsImV4cCI6MTczODk3MTIzMCwiaWF0IjoxNzM4OTY3NjMwLCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.kJzkkNcrgaNLvFmwtJVxMvkt2ujvTPafxnvwHFfN8h4' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"nome\": \"Matheus\",\r\n  \"cpf\": \"04865363513\",\r\n  \"usuario\": {\r\n    \"senhaHash\": \"24422244\"\r\n  },\r\n  \"dataNascimento\": \"1990-11-24\"\r\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{tokenHealthAndMedPatient}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/patients/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"patients",
+								"delete"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'DELETE' \\\r\n  'http://localhost:5001/api/patients/delete' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2MzI2OTY2MS0zOTdhLTQ0NGEtOWYzZS1iNWQ4ZDNhYzNjZWYiLCJuYW1laWQiOiI1Iiwicm9sZSI6InBhdGllbnQiLCJ1bmlxdWVfbmFtZSI6ImRhaWFuZTJAZW1haWwuY29tIiwibmJmIjoxNzM4OTY4MTg0LCJleHAiOjE3Mzg5NzE3ODQsImlhdCI6MTczODk2ODE4NCwiaXNzIjoiQXV0aE1lZCIsImF1ZCI6IkhlYWx0aEdhdGV3YXkifQ.T0TQ6uAH4CNTCE6AwuYn6Rmcs-gaPVzfKkhXgjBpbkg'"
+					},
+					"response": []
+				},
+				{
+					"name": "schedule-get-by-id-doctor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{tokenHealthAndMedPatient}}"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/schedule/doctor/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"schedule",
+								"doctor",
+								"2"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\r\n  'http://localhost:5004/api/schedule/doctor/5' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2ZjY5ZDY5ZS1kYTIyLTQ4ZTEtOTM3Yi03ZmUxYzdmM2JlZTgiLCJuYW1laWQiOiI1Iiwicm9sZSI6ImRvY3RvciIsInVuaXF1ZV9uYW1lIjoiZGV2c0BlbWFpbC5jb20iLCJuYmYiOjE3Mzg4ODYxMTEsImV4cCI6MTczODg4OTcxMSwiaWF0IjoxNzM4ODg2MTExLCJpc3MiOiJBdXRoTWVkIiwiYXVkIjoiSGVhbHRoR2F0ZXdheSJ9.3nj3_WE9ncr40h1RuCHclkaZ2m1AnWmiFR1-NLOV7aw'"
 					},
 					"response": []
 				}
